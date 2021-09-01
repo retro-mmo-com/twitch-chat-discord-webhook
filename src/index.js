@@ -4,7 +4,7 @@ const tmi = require('tmi.js');
 const discord = require('discord.js');
 const fs = require('fs');
 
-const { getUser } = require('./utils/twitchAPI.JS');
+const { getUser } = require('./utils/twitchAPI.js');
 
 const users = JSON.parse(fs.readFileSync('src/utils/users.json', 'utf8'));
 
