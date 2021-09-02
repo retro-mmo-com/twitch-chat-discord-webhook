@@ -6,7 +6,7 @@ const discord = require('discord.js');
 
 const { stringify } = require("querystring");
 
-const { getUser } = require('./utils/twitchAPI.JS');
+const { getUser } = require('./utils/twitchAPI.js');
 
 const users = new Map;
 
