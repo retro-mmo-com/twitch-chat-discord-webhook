@@ -59,7 +59,21 @@ twitchClient.on('ban', async (channel, username, reason) => {
     await axios.post(process.env.DISCORD_WEBHOOK, stringify({
         avatar_url: 'https://i.imgur.com/tRsH8Ag.png',
         content: `**${username} has been banned from the channel.**`,
-        username: "Punishment"
+        username: "Moderation"
+    }), {
+        headers: {
+            "Content-Type": "application/x-www-form-urlencoded"
+        }
+    });
+
+});
+
+twitchClient.on('unban', async (channel, username, reason) => {
+
+    await axios.post(process.env.DISCORD_WEBHOOK, stringify({
+        avatar_url: 'https://i.imgur.com/tRsH8Ag.png',
+        content: `**${username} has been unbanned from the channel.**`,
+        username: "Moderation"
     }), {
         headers: {
             "Content-Type": "application/x-www-form-urlencoded"
