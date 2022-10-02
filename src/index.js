@@ -44,7 +44,7 @@ twitchClient.on('message', async (channel, user, message, self) => {
 
     await axios.post(process.env.DISCORD_WEBHOOK, stringify({
         avatar_url: userInfo.profile_image_url,
-        content: message,
+        content: message.replace(new RegExp("@", "gu"), "[@]"),
         username: user["display-name"]
     }), {
         headers: {
